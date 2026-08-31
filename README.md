@@ -1,6 +1,5 @@
 # Tithely Website Redesign + CRO Prototype
 
-[View the Full Live Project →](https://willferrufino.github.io/Demo-tithely/)
 
 A three-page website redesign and front-end prototype exploring how Tithely's key marketing experiences could be made easier to understand, more interactive, and more conversion-focused.
 
@@ -73,9 +72,9 @@ Rather than asking visitors to imagine what Tithely Giving is like, the prototyp
 
 # 02. Pricing
 
-### [View Live Demo →](https://willferrufino.github.io/Demo-tithely/tithely-pricing-redesign(1).html)
+### [View Live Demo →](https://willferrufino.github.io/Demo-tithely/tithely-pricing-redesign.html)
 
-**File:** [`tithely-pricing-redesign(1).html`](./tithely-pricing-redesign(1).html)
+**File:** [`tithely-pricing-redesign(1).html`](./tithely-pricing-redesign.html)
 
 ## The Opportunity
 
@@ -175,9 +174,9 @@ The intended journey becomes:
 
 # 03. Compare Tithely
 
-### [View Live Demo →](https://willferrufino.github.io/Demo-tithely/tithely-compare-redesign(1).html)
+### [View Live Demo →](https://willferrufino.github.io/Demo-tithely/tithely-compare-redesign.html)
 
-**File:** [`tithely-compare-redesign(1).html`](./tithely-compare-redesign(1).html)
+**File:** [`tithely-compare-redesign(1).html`](./tithely-compare-redesign.html)
 
 ## The Opportunity
 
@@ -404,10 +403,8 @@ Together, the three concepts demonstrate an approach centered around:
 | Prototype | Live Demo | Source |
 |---|---|---|
 | **Online Giving** | [View Live →](https://willferrufino.github.io/Demo-tithely/tithely-online-giving.html) | [`HTML`](./tithely-online-giving.html) |
-| **Pricing** | [View Live →](https://willferrufino.github.io/Demo-tithely/tithely-pricing-redesign(1).html) | [`HTML`](./tithely-pricing-redesign(1).html) |
-| **Compare Tithely** | [View Live →](https://willferrufino.github.io/Demo-tithely/tithely-compare-redesign(1).html) | [`HTML`](./tithely-compare-redesign(1).html) |
-
-### [View the Full Tithely Prototype →](https://willferrufino.github.io/Demo-tithely/)
+| **Pricing** | [View Live →](https://willferrufino.github.io/Demo-tithely/tithely-pricing-redesign.html) | [`HTML`](./tithely-pricing-redesign.html) |
+| **Compare Tithely** | [View Live →](https://willferrufino.github.io/Demo-tithely/tithely-compare-redesign(1).html) | [`HTML`](./tithely-compare-redesign.html) |
 
 ---
 
