@@ -1,0 +1,1851 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+      Online Giving for Churches | Free Church Giving Software | Tithely
+    </title>
+    <meta
+      name="description"
+      content="Give your church a fast, secure, mobile-friendly online giving experience with Tithely. Start free with no monthly fee, enable recurring gifts, and manage generosity in one place."
+    />
+    <meta name="robots" content="index,follow" />
+    <link
+      rel="canonical"
+      href="https://get.tithe.ly/product/online-giving-for-churches"
+    />
+    <meta property="og:title" content="Online Giving for Churches | Tithely" />
+    <meta
+      property="og:description"
+      content="Modern church online giving with no monthly fee. Make generosity simple on mobile, web, and beyond."
+    />
+    <meta property="og:type" content="website" />
+    <style>
+      :root {
+        --green: #5BD9A4;
+        --green-dark: #39C88C;
+        --main-orange: #ff7a45;
+        --main-coral: #f3354b;
+        --warm-gradient: linear-gradient(0deg, var(--main-orange), var(--main-coral));
+        --warm-gradient-soft: linear-gradient(135deg, rgba(255, 122, 69, .12), rgba(243, 53, 75, .08));
+        --ink: #17202b;
+        --muted: #667085;
+        --soft: #f3fbf8;
+        --line: #e5ece8;
+        --white: #fff;
+        --yellow: #fff3ba;
+        --navy: #13251b;
+        --radius: 24px;
+        --shadow: 0 24px 70px rgba(17, 47, 31, 0.1);
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        font-family:
+          "Inter",
+          "Helvetica Neue",
+          ui-sans-serif,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          sans-serif;
+        color: var(--ink);
+        background: #fff;
+        line-height: 1.55;
+        -webkit-font-smoothing: antialiased;
+      }
+      img {
+        max-width: 100%;
+        display: block;
+      }
+      a {
+        color: inherit;
+      }
+      .wrap {
+        width: min(1180px, calc(100% - 40px));
+        margin: auto;
+      }
+      .skip {
+        position: absolute;
+        left: -999px;
+      }
+      .skip:focus {
+        left: 12px;
+        top: 12px;
+        background: #fff;
+        padding: 10px 14px;
+        z-index: 999;
+        border-radius: 10px;
+      }
+      .topbar {
+        background: linear-gradient(90deg, #f3354b 0%, #ff6b4a 48%, #ff8a45 100%);
+        color: #fff;
+        font-size: 14px;
+      }
+      .topbar .wrap {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 8px;
+        gap: 8px;
+      }
+      .topbar strong {
+        color: #fff;
+      }
+      .nav {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: rgba(255, 255, 255, 0.92);
+        backdrop-filter: blur(14px);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      }
+      .navin {
+        height: 76px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+        font-weight: 650;
+        font-size: 24px;
+      }
+      .brand img {
+        height: 34px;
+        width: auto;
+      }
+      .links {
+        display: flex;
+        gap: 28px;
+        color: #45505d;
+        font-size: 14px;
+        font-weight: 650;
+      }
+      .links a {
+        text-decoration: none;
+      }
+      .actions {
+        display: flex;
+        gap: 10px;
+      }
+      .btn {
+        border: 0;
+        border-radius: 999px;
+        padding: 13px 20px;
+        font-weight: 600;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        cursor: pointer;
+        transition: 0.2s ease;
+        font-size: 15px;
+      }
+      .btn:hover {
+        transform: translateY(-1px);
+      }
+      .btn.primary {
+        background: linear-gradient(135deg, #5BD9A4 0%, #72E3B6 100%);
+        color: #0d2a18;
+        box-shadow: 0 10px 28px rgba(91, 217, 164, 0.28);
+      }
+      .btn.primary:hover {
+        background: #70E1B2;
+      }
+      .btn.dark {
+        background: var(--ink);
+        color: #fff;
+      }
+      .btn.ghost {
+        background: #fff;
+        border: 1px solid var(--line);
+      }
+      .hero {
+        position: relative;
+        overflow: hidden;
+        padding: 72px 0 46px;
+        background: linear-gradient(180deg, #ffffff 0%, #f5fcf9 58%, #ecfaf4 100%);
+      }
+      .hero:before {
+        content: "";
+        position: absolute;
+        right: -120px;
+        top: -220px;
+        width: 580px;
+        height: 580px;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          #d9f8eb 0%,
+          rgba(217, 248, 235, 0) 68%
+        );
+      }
+      .hero:after {
+        content: "";
+        position: absolute;
+        left: -180px;
+        bottom: -260px;
+        width: 520px;
+        height: 520px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(255, 122, 69, .13) 0%, rgba(243, 53, 75, .05) 38%, transparent 70%);
+        pointer-events: none;
+      }
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.02fr 0.98fr;
+        gap: 64px;
+        align-items: center;
+      }
+      .eyebrow {
+        display: inline-flex;
+        gap: 8px;
+        align-items: center;
+        padding: 7px 12px;
+        background: #ecfbf5;
+        border: 1px solid #c9f2e1;
+        color: #237557;
+        border-radius: 999px;
+        font-weight: 600;
+        font-size: 12px;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+      }
+      .gradient-dot {
+        width: 8px;
+        height: 8px;
+        flex: 0 0 8px;
+        border-radius: 50%;
+        background: var(--warm-gradient);
+      }
+      .hero h1 {
+        font-size: clamp(46px, 5.4vw, 70px);
+        letter-spacing: -0.055em;
+        line-height: 1.02;
+        margin: 20px 0 22px;
+        max-width: 780px;
+      }
+      .hero h1 .accent {
+        color: #39C88C;
+      }
+      .hero-copy {
+        font-size: 19px;
+        color: #586575;
+        max-width: 650px;
+      }
+      .hero-ctas {
+        display: flex;
+        gap: 12px;
+        margin-top: 28px;
+        flex-wrap: wrap;
+      }
+      .micro {
+        display: flex;
+        gap: 22px;
+        align-items: center;
+        margin-top: 22px;
+        color: #52606d;
+        font-size: 13px;
+        font-weight: 500;
+        flex-wrap: wrap;
+      }
+      .micro span:before {
+        content: "✓";
+        color: #2DBA7E;
+        margin-right: 7px;
+        font-weight: 900;
+      }
+      .visual {
+        position: relative;
+        min-height: 560px;
+      }
+      .visual-card {
+        position: absolute;
+        inset: 15px 0 0 25px;
+        background: #fff;
+        border: 1px solid #e4eee8;
+        box-shadow: var(--shadow);
+        border-radius: 32px;
+        padding: 18px;
+        transform: rotate(1.6deg);
+      }
+      .visual-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 22px;
+        background: #f3f4f4;
+      }
+      .float {
+        position: absolute;
+        background: #fff;
+        border: 1px solid #e2ebe5;
+        box-shadow: 0 18px 45px rgba(24, 55, 36, 0.12);
+        border-radius: 18px;
+        padding: 15px 17px;
+        font-weight: 750;
+      }
+      .float.one {
+        left: -22px;
+        bottom: 92px;
+        animation: bob 4s ease-in-out infinite;
+      }
+      .float.two {
+        right: -12px;
+        top: 72px;
+        animation: bob 4.5s ease-in-out infinite reverse;
+      }
+      .float small {
+        display: block;
+        color: #75808b;
+        font-weight: 600;
+        margin-top: 3px;
+      }
+      .pulse {
+        width: 10px;
+        height: 10px;
+        background: var(--green);
+        border-radius: 50%;
+        display: inline-block;
+        box-shadow: 0 0 0 7px rgba(91, 217, 164, 0.16);
+        margin-right: 9px;
+      }
+      @keyframes bob {
+        50% {
+          transform: translateY(-9px);
+        }
+      }
+      .trust {
+        padding: 24px 0;
+        border-bottom: 1px solid var(--line);
+      }
+      .trustin {
+        display: grid;
+        grid-template-columns: 1fr auto auto auto;
+        align-items: center;
+        gap: 28px;
+      }
+      .trust strong {
+        font-size: 15px;
+      }
+      .stars {
+        color: #39C88C;
+        letter-spacing: 2px;
+      }
+      .rating {
+        font-size: 13px;
+        color: #68737f;
+      }
+      .metric {
+        border-left: 1px solid var(--line);
+        padding-left: 28px;
+      }
+      .metric b {
+        font-size: 22px;
+        color: #111d16;
+      }
+      .metric span {
+        display: block;
+        font-size: 12px;
+        color: #6d786f;
+      }
+      section {
+        padding: 92px 0;
+      }
+      .section-head {
+        max-width: 760px;
+        margin-bottom: 42px;
+      }
+      .kicker {
+        color: #248C66;
+        font-size: 13px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+      .section-head h2,
+      .split h2 {
+        font-size: clamp(34px, 4vw, 52px);
+        letter-spacing: -0.045em;
+        line-height: 1.03;
+        margin: 10px 0 16px;
+      }
+      .section-head p,
+      .split p {
+        font-size: 18px;
+        color: var(--muted);
+      }
+      .quick {
+        background: #fff;
+      }
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+      }
+      .card {
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        padding: 26px;
+        background: #fff;
+        transition: 0.25s ease;
+        position: relative;
+        overflow: hidden;
+      }
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 18px 45px rgba(22, 49, 33, 0.09);
+        border-color: #cde8d5;
+      }
+      .icon {
+        width: 46px;
+        height: 46px;
+        border-radius: 14px;
+        background: #ebfaf4;
+        display: grid;
+        place-items: center;
+        color: #2DAF78;
+        font-size: 23px;
+        margin-bottom: 22px;
+      }
+      .card h3 {
+        font-size: 21px;
+        font-weight: 600;
+        margin: 0 0 8px;
+      }
+      .card p {
+        margin: 0;
+        color: #68737d;
+        font-size: 15px;
+      }
+      .card .tag {
+        position: absolute;
+        right: 16px;
+        top: 16px;
+        background: #f4f7f5;
+        border-radius: 999px;
+        padding: 5px 9px;
+        font-size: 10px;
+        font-weight: 600;
+        color: #65716a;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+      .demo {
+        background:
+          radial-gradient(circle at 82% 18%, rgba(91, 217, 164, 0.14), transparent 34%),
+          linear-gradient(135deg, #102219 0%, #163526 55%, #102219 100%);
+        color: #fff;
+        overflow: hidden;
+      }
+      .demo .section-head p {
+        color: #c7d1ca;
+      }
+      .demo-grid {
+        display: grid;
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 54px;
+        align-items: center;
+      }
+      .steps {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .step {
+        padding: 20px;
+        border-radius: 18px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        cursor: pointer;
+        transition: 0.25s;
+      }
+      .step.active {
+        background: #fff;
+        color: var(--ink);
+        border-color: #fff;
+      }
+      .step strong {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .num {
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        border: 1px solid currentColor;
+        display: grid;
+        place-items: center;
+        font-size: 12px;
+      }
+      .step p {
+        font-size: 14px;
+        color: #aebbb2;
+        margin: 8px 0 0 40px;
+      }
+      .step.active p {
+        color: #667085;
+      }
+      .phone-stage {
+        display: grid;
+        place-items: center;
+        min-height: 520px;
+        position: relative;
+      }
+      .phone {
+        width: min(390px, 85%);
+        background: #fff;
+        border-radius: 34px;
+        padding: 16px;
+        box-shadow: 0 40px 100px rgba(0, 0, 0, 0.35);
+        color: #18251d;
+        transition: 0.35s ease;
+      }
+      .phone-inner {
+        border: 1px solid #e5ebe7;
+        border-radius: 24px;
+        min-height: 450px;
+        padding: 24px;
+        background: #fbfdfb;
+      }
+      .churchmark {
+        width: 42px;
+        height: 42px;
+        border-radius: 14px;
+        background: #173f2a;
+        color: white;
+        display: grid;
+        place-items: center;
+        font-weight: 650;
+        margin-bottom: 22px;
+      }
+      .phone h3 {
+        font-size: 23px;
+        font-weight: 600;
+        margin: 0 0 6px;
+      }
+      .phone .sub {
+        font-size: 13px;
+        color: #7b8680;
+      }
+      .amounts {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+        margin: 20px 0;
+      }
+      .amount {
+        padding: 12px;
+        border: 1px solid #dce6df;
+        border-radius: 12px;
+        text-align: center;
+        font-weight: 600;
+        cursor: pointer;
+      }
+      .amount.active {
+        background: #eafaf4;
+        border-color: #5BD9A4;
+        color: #237557;
+      }
+      .field {
+        padding: 13px;
+        border: 1px solid #dce6df;
+        border-radius: 12px;
+        margin: 9px 0;
+        color: #4f5c54;
+        font-size: 13px;
+      }
+      .give {
+        width: 100%;
+        padding: 14px;
+        border: 0;
+        border-radius: 12px;
+        background: linear-gradient(135deg, #5BD9A4 0%, #72E3B6 100%);
+        font-weight: 650;
+        margin-top: 12px;
+      }
+      .success-state {
+        display: none;
+        min-height: 390px;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 34px 18px;
+      }
+      .phone.success .giving-form {
+        display: none;
+      }
+      .phone.success .success-state {
+        display: flex;
+      }
+      .success-content {
+        width: 100%;
+        animation: successIn 0.45s ease both;
+      }
+      .success-check {
+        width: 68px;
+        height: 68px;
+        margin: 0 auto 22px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        background: var(--warm-gradient);
+        color: #fff;
+        box-shadow: 0 12px 30px rgba(243, 53, 75, .18);
+        font-size: 30px;
+        font-weight: 650;
+      }
+      .success-state h3 {
+        margin: 0 0 9px;
+        font-size: 25px;
+        font-weight: 600;
+        letter-spacing: -0.025em;
+      }
+      .success-state p {
+        margin: 0 auto;
+        max-width: 270px;
+        color: #6c7871;
+        font-size: 14px;
+      }
+      .success-receipt {
+        margin: 24px auto 0;
+        max-width: 270px;
+        padding: 15px;
+        border: 1px solid #dfe8e2;
+        border-radius: 14px;
+        background: #fff;
+        text-align: left;
+        font-size: 13px;
+        color: #526057;
+      }
+      .success-receipt strong {
+        display: block;
+        color: #17251d;
+        font-size: 15px;
+        font-weight: 600;
+        margin-bottom: 3px;
+      }
+      .replay-demo {
+        margin-top: 20px;
+        border: 0;
+        background: transparent;
+        color: #248C66;
+        font: inherit;
+        font-size: 13px;
+        font-weight: 600;
+        cursor: pointer;
+        padding: 10px 12px;
+      }
+      @keyframes successIn {
+        from { opacity: 0; transform: translateY(10px) scale(.98); }
+        to { opacity: 1; transform: none; }
+      }
+      .demo-caption {
+        text-align: center;
+        color: #98aaa0;
+        font-size: 12px;
+        margin-top: 14px;
+      }
+      .split-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 62px;
+        align-items: center;
+      }
+      .product-img {
+        background: #f0f8f3;
+        border-radius: 28px;
+        padding: 28px;
+        position: relative;
+      }
+      .product-img img {
+        border-radius: 18px;
+        box-shadow: 0 24px 60px rgba(19, 54, 33, 0.15);
+      }
+      .bullets {
+        display: grid;
+        gap: 13px;
+        margin: 28px 0;
+      }
+      .bullet {
+        display: flex;
+        gap: 12px;
+        align-items: flex-start;
+      }
+      .check {
+        flex: 0 0 23px;
+        width: 23px;
+        height: 23px;
+        border-radius: 50%;
+        background: #e4f8f0;
+        color: #248C66;
+        display: grid;
+        place-items: center;
+        font-weight: 900;
+        font-size: 12px;
+      }
+      .bullet b {
+        display: block;
+      }
+      .bullet span {
+        display: block;
+        color: #6d7881;
+        font-size: 14px;
+        margin-top: 2px;
+      }
+      .calc-section {
+        background:
+          radial-gradient(circle at 95% 10%, rgba(255, 122, 69, .10), transparent 24%),
+          linear-gradient(180deg, #f7fbf8 0%, #fbf9f7 100%);
+      }
+      .calc {
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 28px;
+        padding: 34px;
+        display: grid;
+        grid-template-columns: 1fr 0.8fr;
+        gap: 38px;
+        box-shadow: 0 18px 65px rgba(20, 55, 35, 0.07);
+      }
+      .range-row {
+        margin: 22px 0;
+      }
+      .range-row label {
+        display: flex;
+        justify-content: space-between;
+        font-weight: 750;
+      }
+      .range-row output {
+        color: #248C66;
+      }
+      .range-row input {
+        width: 100%;
+        accent-color: var(--green);
+        margin-top: 12px;
+      }
+      .result {
+        background: linear-gradient(145deg, #12271c 0%, #1d4934 100%);
+        color: #fff;
+        border-radius: 22px;
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .result .big {
+        font-size: 46px;
+        font-weight: 650;
+        letter-spacing: -0.035em;
+        color: #8EE8C2;
+      }
+      .result p {
+        color: #bed0c4;
+      }
+      .disclaimer {
+        font-size: 11px;
+        color: #879189;
+        margin-top: 10px;
+      }
+      .pricing {
+        background: #fff;
+      }
+      .price-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+      }
+      .price {
+        border: 1px solid var(--line);
+        border-radius: 26px;
+        padding: 30px;
+        position: relative;
+      }
+      .price.featured {
+        border: 2px solid var(--green);
+        background:
+          radial-gradient(circle at 100% 0%, rgba(255, 122, 69, .08), transparent 28%),
+          linear-gradient(180deg, #ffffff 0%, #f2fcf8 100%);
+        box-shadow: 0 20px 60px rgba(34, 187, 88, 0.1);
+      }
+      .badge {
+        position: absolute;
+        right: 22px;
+        top: 22px;
+        background: #eafaf4;
+        color: #237557;
+        padding: 6px 10px;
+        border-radius: 999px;
+        font-size: 11px;
+        font-weight: 850;
+      }
+      .price h3 {
+        font-size: 27px;
+        font-weight: 600;
+        margin: 0;
+      }
+      .price .cost {
+        font-size: 52px;
+        font-weight: 650;
+        letter-spacing: -0.045em;
+        margin: 18px 0 2px;
+      }
+      .price .cost small {
+        font-size: 15px;
+        font-weight: 500;
+        color: #77817b;
+      }
+      .price ul {
+        list-style: none;
+        padding: 0;
+        margin: 25px 0;
+        display: grid;
+        gap: 11px;
+      }
+      .price li:before {
+        content: "✓";
+        color: #2DAF78;
+        font-weight: 900;
+        margin-right: 9px;
+      }
+      .faq {
+        background: #f8fbf9;
+      }
+      .faq-list {
+        max-width: 880px;
+      }
+      .faq-item {
+        border-bottom: 1px solid #dfe7e2;
+      }
+      .faq-q {
+        width: 100%;
+        background: none;
+        border: 0;
+        text-align: left;
+        font: inherit;
+        padding: 20px 0;
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        font-weight: 600;
+        font-size: 18px;
+        cursor: pointer;
+      }
+      .faq-a {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        color: #66726b;
+      }
+      .faq-item.open .faq-a {
+        max-height: 240px;
+      }
+      .faq-a p {
+        margin: 0 0 22px;
+      }
+      .plus {
+        transition: 0.2s;
+      }
+      .faq-item.open .plus {
+        transform: rotate(45deg);
+      }
+      .final {
+        position: relative;
+        overflow: hidden;
+        padding: 88px 0;
+        background:
+          radial-gradient(circle at 82% 30%, rgba(255,255,255,.68), transparent 26%),
+          linear-gradient(120deg, #dff8ee 0%, #bff1dc 52%, #eafbf4 100%);
+      }
+      .final:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, #f3354b, #ff7a45, #5BD9A4);
+      }
+      .finalbox {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 30px;
+      }
+      .final h2 {
+        font-size: clamp(36px, 4.5vw, 54px);
+        letter-spacing: -0.05em;
+        line-height: 1;
+        margin: 0 0 12px;
+      }
+      .final p {
+        color: #386653;
+        margin: 0;
+      }
+      .newsletter {
+        position: relative;
+        overflow: hidden;
+        padding: 86px 0;
+        background:
+          radial-gradient(circle at 88% 20%, rgba(255,255,255,.72), transparent 24%),
+          linear-gradient(120deg, #dff8ee 0%, #bff1dc 52%, #eafbf4 100%);
+      }
+      .newsletter:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, #f3354b, #ff7a45, #5BD9A4);
+      }
+      .newsletter-box {
+        display: grid;
+        grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+        gap: 64px;
+        align-items: center;
+      }
+      .newsletter-copy h2 {
+        font-size: clamp(38px, 4.7vw, 58px);
+        line-height: 1.02;
+        letter-spacing: -0.04em;
+        font-weight: 560;
+        margin: 10px 0 16px;
+        max-width: 700px;
+      }
+      .newsletter-copy p {
+        margin: 0;
+        color: #426353;
+        font-size: 17px;
+        max-width: 570px;
+      }
+      .newsletter-form {
+        background: rgba(255,255,255,.84);
+        border: 1px solid rgba(255,255,255,.95);
+        border-radius: 24px;
+        padding: 24px;
+        box-shadow: 0 24px 60px rgba(27, 75, 52, .10);
+        backdrop-filter: blur(8px);
+      }
+      .newsletter-input-wrap {
+        display: flex;
+        gap: 10px;
+        align-items: stretch;
+      }
+      .newsletter-input-wrap input {
+        flex: 1 1 auto;
+        min-width: 0;
+        border: 1px solid #d5e6de;
+        background: #fff;
+        border-radius: 999px;
+        padding: 14px 18px;
+        font: inherit;
+        font-size: 15px;
+        color: var(--ink);
+        outline: none;
+        transition: .2s ease;
+      }
+      .newsletter-input-wrap input:focus {
+        border-color: #5BD9A4;
+        box-shadow: 0 0 0 4px rgba(91, 217, 164, .16);
+      }
+      .newsletter-note {
+        font-size: 11px;
+        line-height: 1.45;
+        color: #738078;
+        margin: 12px 4px 0;
+      }
+      .newsletter-success {
+        display: none;
+        margin-top: 14px;
+        padding: 12px 14px;
+        border-radius: 14px;
+        background: #e8faf2;
+        color: #237557;
+        font-size: 13px;
+        font-weight: 600;
+      }
+      .newsletter-success.show {
+        display: block;
+      }
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0,0,0,0);
+        white-space: nowrap;
+        border: 0;
+      }
+      @media (max-width: 900px) {
+        .newsletter-box {
+          grid-template-columns: 1fr;
+          gap: 30px;
+        }
+      }
+      @media (max-width: 600px) {
+        .newsletter-input-wrap {
+          flex-direction: column;
+        }
+        .newsletter-input-wrap .btn {
+          width: 100%;
+        }
+      }
+
+      .footer {
+        background: #0f1c15;
+        color: #b9c5bd;
+        padding: 42px 0;
+      }
+      .footerin {
+        display: flex;
+        justify-content: space-between;
+        gap: 30px;
+        align-items: center;
+      }
+      .footlinks {
+        display: flex;
+        gap: 20px;
+        font-size: 13px;
+      }
+      .footlinks a {
+        color: #b9c5bd;
+        text-decoration: none;
+      }
+      .sticky-cta {
+        position: fixed;
+        bottom: 18px;
+        left: 50%;
+        transform: translate(-50%, 140%);
+        z-index: 120;
+        background: #15241b;
+        color: #fff;
+        border-radius: 999px;
+        padding: 8px 8px 8px 18px;
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        box-shadow: 0 18px 60px rgba(0, 0, 0, 0.24);
+        transition: 0.3s ease;
+      }
+      .sticky-cta.show {
+        transform: translate(-50%, 0);
+      }
+      .sticky-cta span {
+        font-size: 13px;
+        font-weight: 550;
+        white-space: nowrap;
+      }
+      .sticky-cta .btn {
+        padding: 10px 16px;
+        font-size: 13px;
+      }
+      .reveal {
+        opacity: 0;
+        transform: translateY(22px);
+        transition: 0.65s ease;
+      }
+      .reveal.in {
+        opacity: 1;
+        transform: none;
+      }
+      @media (max-width: 900px) {
+        .links {
+          display: none;
+        }
+        .hero-grid,
+        .demo-grid,
+        .split-grid,
+        .calc {
+          grid-template-columns: 1fr;
+        }
+        .visual {
+          min-height: 470px;
+        }
+        .trustin {
+          grid-template-columns: 1fr 1fr;
+        }
+        .trustin > strong {
+          grid-column: 1/-1;
+        }
+        .cards {
+          grid-template-columns: 1fr;
+        }
+        .price-grid {
+          grid-template-columns: 1fr;
+        }
+        .finalbox {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+        .metric {
+          border-left: 0;
+          padding-left: 0;
+        }
+        .hero {
+          padding-top: 48px;
+        }
+      }
+      @media (max-width: 600px) {
+        .wrap {
+          width: min(100% - 28px, 1180px);
+        }
+        .navin {
+          height: 68px;
+        }
+        .actions .ghost {
+          display: none;
+        }
+        .hero h1 {
+          font-size: 44px;
+        }
+        .hero-copy {
+          font-size: 17px;
+        }
+        .hero-ctas .btn {
+          width: 100%;
+        }
+        .visual {
+          min-height: 405px;
+        }
+        .visual-card {
+          inset: 15px 0;
+        }
+        .float {
+          font-size: 12px;
+        }
+        .float.one {
+          left: 4px;
+          bottom: 45px;
+        }
+        .float.two {
+          right: 2px;
+          top: 48px;
+        }
+        .trustin {
+          grid-template-columns: 1fr;
+        }
+        .cards {
+          gap: 12px;
+        }
+        section {
+          padding: 68px 0;
+        }
+        .phone-stage {
+          min-height: 460px;
+        }
+        .calc {
+          padding: 22px;
+        }
+        .sticky-cta {
+          width: calc(100% - 24px);
+          justify-content: space-between;
+        }
+        .sticky-cta span {
+          display: none;
+        }
+        .footerin {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          scroll-behavior: auto !important;
+          animation: none !important;
+          transition: none !important;
+        }
+        .reveal {
+          opacity: 1;
+          transform: none;
+        }
+      }
+    </style>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Tithely Online Giving",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "description": "Online giving software for churches with recurring gifts, mobile-friendly forms, and church-branded giving experiences."
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <div class="topbar">
+      <div class="wrap">
+        Online giving starts at <strong>$0/month</strong> · No setup fees · No
+        contracts
+      </div>
+    </div>
+    <nav class="nav" aria-label="Main navigation">
+      <div class="wrap navin">
+        <a class="brand" href="#" aria-label="Tithely home"
+          ><span>Tithely</span></a
+        >
+        <div class="links">
+          <a href="#why">Why Tithely</a><a href="#how">How it works</a
+          ><a href="#admin">For admins</a><a href="#pricing">Pricing</a
+          ><a href="#faq">FAQ</a>
+        </div>
+        <div class="actions">
+          <a class="btn ghost" href="https://app.tithely.com/">Watch demo</a
+          ><a class="btn primary" href="https://signup.tithe.ly/"
+            >Start giving free →</a
+          >
+        </div>
+      </div>
+    </nav>
+    <main id="main">
+      <section class="hero">
+        <div class="wrap hero-grid">
+          <div class="reveal">
+            <div class="eyebrow"><span class="gradient-dot"></span>Online Giving Software for Churches</div>
+            <h1>Make giving feel <span class="accent">effortless.</span></h1>
+            <p class="hero-copy">
+              A fast, mobile-first giving experience that helps people give in
+              seconds—and gives your staff one less system to wrestle with.
+            </p>
+            <div class="hero-ctas">
+              <a class="btn primary" href="https://signup.tithe.ly/"
+                >Start Free — $0/month</a
+              ><a class="btn ghost" href="#how">See how it works ↓</a>
+            </div>
+            <div class="micro">
+              <span>No credit card required</span
+              ><span>Recurring giving built in</span><span>Cancel anytime</span>
+            </div>
+          </div>
+          <div class="visual reveal">
+            <div class="visual-card">
+              <img
+                src="https://cdn.prod.website-files.com/5f6a31379c9e2712518b8d6c/680b91bc83a8055c5d15bec5_online-giving_hero.avif"
+                alt="Tithely online giving interface"
+                fetchpriority="high"
+              />
+            </div>
+            <div class="float one">
+              <span class="pulse"></span>Recurring gift enabled<small
+                >Steady generosity, automatically</small
+              >
+            </div>
+            <div class="float two">
+              ✓ Gift received<small>Mobile giving in seconds</small>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="trust">
+        <div class="wrap trustin">
+          <strong>Trusted by churches around the world</strong>
+          <div>
+            <span class="stars">★★★★★</span>
+            <div class="rating">4.7 · 1,100+ Trustpilot reviews</div>
+          </div>
+          <div>
+            <span class="stars">★★★★★</span>
+            <div class="rating">4.7 · 650+ Capterra reviews</div>
+          </div>
+          <div class="metric"><b>50,000+</b><span>churches served</span></div>
+        </div>
+      </div>
+      <section class="quick" id="why">
+        <div class="wrap">
+          <div class="section-head reveal">
+            <div class="kicker">Built around generosity</div>
+            <h2>Less friction for givers. Less work for your team.</h2>
+            <p>
+              Every key action is designed to make giving easier to start,
+              easier to repeat, and easier to manage.
+            </p>
+          </div>
+          <div class="cards">
+            <article class="card reveal">
+              <span class="tag">Giver experience</span>
+              <div class="icon">↗</div>
+              <h3>Give in seconds</h3>
+              <p>
+                Mobile-optimized forms remove unnecessary logins and extra steps
+                so donors can complete a gift quickly.
+              </p>
+            </article>
+            <article class="card reveal">
+              <span class="tag">Retention</span>
+              <div class="icon">↻</div>
+              <h3>Make recurring giving natural</h3>
+              <p>
+                A clear recurring option makes consistent generosity easy to set
+                up and simple for donors to manage.
+              </p>
+            </article>
+            <article class="card reveal">
+              <span class="tag">Brand trust</span>
+              <div class="icon">✦</div>
+              <h3>Keep your church front and center</h3>
+              <p>
+                Add your logo, colors, funds, and designations for a giving
+                experience that feels connected to your ministry.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="demo" id="how">
+        <div class="wrap demo-grid">
+          <div>
+            <div class="section-head reveal">
+              <div class="kicker" style="color: #8EE8C2">
+                Interactive walkthrough
+              </div>
+              <h2>See how simple giving can be.</h2>
+              <p>
+                Select a step to preview the experience. This interaction also
+                gives a CRO team a natural surface for testing messaging,
+                defaults, and recurring-gift behavior.
+              </p>
+            </div>
+            <div class="steps" role="tablist" aria-label="Giving flow">
+              <div class="step active" tabindex="0" data-step="0">
+                <strong><span class="num">1</span>Choose a gift amount</strong>
+                <p>Quick-select amounts reduce typing and decision friction.</p>
+              </div>
+              <div class="step" tabindex="0" data-step="1">
+                <strong><span class="num">2</span>Select a fund</strong>
+                <p>Give to tithes, missions, building funds, and more.</p>
+              </div>
+              <div class="step" tabindex="0" data-step="2">
+                <strong><span class="num">3</span>Make it recurring</strong>
+                <p>A simple repeat-gift choice supports steady generosity.</p>
+              </div>
+            </div>
+          </div>
+          <div class="phone-stage reveal">
+            <div class="phone" id="phone">
+              <div class="phone-inner">
+                <div class="giving-form">
+                  <div class="churchmark">CH</div>
+                  <h3>Give to Community Church</h3>
+                  <div class="sub" id="phoneSub">Choose an amount to give</div>
+                  <div class="amounts">
+                    <div class="amount">$25</div>
+                    <div class="amount active">$50</div>
+                    <div class="amount">$100</div>
+                  </div>
+                  <div class="field" id="field1">General Fund ▾</div>
+                  <div class="field" id="field2">One-time gift ▾</div>
+                  <button class="give" type="button">Continue with $50</button>
+                </div>
+                <div class="success-state" aria-live="polite">
+                  <div class="success-content">
+                    <div class="success-check" aria-hidden="true">✓</div>
+                    <h3>Thank you for your donation.</h3>
+                    <p>Your gift has been successfully submitted to Community Church.</p>
+                    <div class="success-receipt">
+                      <strong id="successAmount">$50 gift</strong>
+                      <span id="successDetails">General Fund · Monthly</span>
+                    </div>
+                    <button class="replay-demo" id="replayDemo" type="button">Replay walkthrough ↺</button>
+                  </div>
+                </div>
+              </div>
+              <div class="demo-caption">
+                Interactive concept · no payment is processed
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="admin">
+        <div class="wrap split-grid">
+          <div class="product-img reveal">
+            <img
+              src="https://cdn.prod.website-files.com/5f6a31379c9e2712518b8d6c/67eb154804b4fe57e13be37c_3.0-Giving-GivingFormAdminPage.avif"
+              alt="Tithely giving administration dashboard"
+              loading="lazy"
+            />
+          </div>
+          <div class="split reveal">
+            <div class="kicker">Designed for church admins, too</div>
+            <h2>Your giving data should work as hard as you do.</h2>
+            <p>
+              Move beyond collecting donations. Give staff fast visibility and
+              cleaner workflows without relying on manual spreadsheets or
+              disconnected tools.
+            </p>
+            <div class="bullets">
+              <div class="bullet">
+                <span class="check">✓</span>
+                <div>
+                  <b>Real-time giving visibility</b
+                  ><span
+                    >See activity as it happens and keep the team aligned.</span
+                  >
+                </div>
+              </div>
+              <div class="bullet">
+                <span class="check">✓</span>
+                <div>
+                  <b>Automatic fund tracking</b
+                  ><span
+                    >Keep tithes, missions, building funds, and other
+                    designations organized.</span
+                  >
+                </div>
+              </div>
+              <div class="bullet">
+                <span class="check">✓</span>
+                <div>
+                  <b>Church management sync</b
+                  ><span
+                    >Connect giving activity with your church management
+                    workflows.</span
+                  >
+                </div>
+              </div>
+              <div class="bullet">
+                <span class="check">✓</span>
+                <div>
+                  <b>Reports and tax receipts</b
+                  ><span
+                    >Get the records your team and donors need with less manual
+                    effort.</span
+                  >
+                </div>
+              </div>
+            </div>
+            <a class="btn dark" href="https://signup.tithe.ly/">Start free</a>
+          </div>
+        </div>
+      </section>
+      <section class="calc-section">
+        <div class="wrap">
+          <div class="section-head reveal">
+            <div class="kicker">Conversion concept</div>
+            <h2>What could recurring giving look like?</h2>
+            <p>
+              Use the interactive estimator to visualize the potential
+              consistency of recurring participation. It’s intentionally framed
+              as an illustration—not a promise.
+            </p>
+          </div>
+          <div class="calc reveal">
+            <div>
+              <div class="range-row">
+                <label
+                  >Average weekly attendance
+                  <output id="attendanceOut">250</output></label
+                ><input
+                  id="attendance"
+                  type="range"
+                  min="50"
+                  max="2500"
+                  value="250"
+                  step="50"
+                />
+              </div>
+              <div class="range-row">
+                <label
+                  >Recurring givers <output id="giverOut">20%</output></label
+                ><input
+                  id="givers"
+                  type="range"
+                  min="5"
+                  max="70"
+                  value="20"
+                  step="5"
+                />
+              </div>
+              <div class="range-row">
+                <label
+                  >Average recurring gift
+                  <output id="giftOut">$50</output></label
+                ><input
+                  id="gift"
+                  type="range"
+                  min="10"
+                  max="250"
+                  value="50"
+                  step="5"
+                />
+              </div>
+              <p class="disclaimer">
+                Illustrative calculator only. Actual giving behavior varies by
+                congregation and is not guaranteed.
+              </p>
+            </div>
+            <div class="result">
+              <span>Illustrative recurring total</span>
+              <div class="big" id="monthly">$10,000</div>
+              <p>per month from the assumptions you selected.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="pricing" id="pricing">
+        <div class="wrap">
+          <div class="section-head reveal">
+            <div class="kicker">Start where you are</div>
+            <h2>Simple giving now. More church tools when you need them.</h2>
+            <p>
+              Lead with the lowest-friction choice, then make the upgrade path
+              easy to understand.
+            </p>
+          </div>
+          <div class="price-grid">
+            <div class="price featured reveal">
+              <span class="badge">Best way to start</span>
+              <h3>Giving Tools</h3>
+              <div class="cost">$0 <small>/ month</small></div>
+              <p>
+                No monthly or setup fees for the giving product. Standard
+                transaction processing applies.
+              </p>
+              <ul>
+                <li>Online and mobile giving</li>
+                <li>Recurring gifts</li>
+                <li>Custom funds and church branding</li>
+                <li>Donor-covered fee option</li>
+                <li>Reporting tools</li>
+              </ul>
+              <a class="btn primary" href="https://signup.tithe.ly/"
+                >Start Growing Donations Free</a
+              >
+            </div>
+            <div class="price reveal">
+              <span class="badge">Complete platform</span>
+              <h3>All Access</h3>
+              <div class="cost">$119 <small>/ month</small></div>
+              <p>
+                Giving plus a broader set of tools to streamline administration
+                and church engagement.
+              </p>
+              <ul>
+                <li>Giving + Text-to-Give</li>
+                <li>Church Management</li>
+                <li>Custom Church Apps</li>
+                <li>Church Website</li>
+                <li>Worship Team Tools</li>
+              </ul>
+              <a class="btn dark" href="https://signup.tithe.ly/"
+                >Try Free for 30 Days</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="faq" id="faq">
+        <div class="wrap">
+          <div class="section-head reveal">
+            <div class="kicker">Online giving FAQ</div>
+            <h2>Questions churches ask before getting started.</h2>
+          </div>
+          <div class="faq-list reveal">
+            <div class="faq-item open">
+              <button class="faq-q" aria-expanded="true">
+                How do you set up online giving for a church?<span class="plus"
+                  >+</span
+                >
+              </button>
+              <div class="faq-a">
+                <p>
+                  Create your Tithely account, configure your giving form and
+                  funds, then add the giving button or link to your church
+                  website. The platform is designed to get churches collecting
+                  donations quickly.
+                </p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q" aria-expanded="false">
+                Does Tithely charge a monthly fee for online giving?<span
+                  class="plus"
+                  >+</span
+                >
+              </button>
+              <div class="faq-a">
+                <p>
+                  The Giving Tools plan is listed at $0/month with no setup fee.
+                  Transaction processing fees still apply.
+                </p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q" aria-expanded="false">
+                Can people set up recurring donations?<span class="plus"
+                  >+</span
+                >
+              </button>
+              <div class="faq-a">
+                <p>
+                  Yes. Recurring giving is built into the giving experience so
+                  donors can set up consistent gifts and manage them over time.
+                </p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q" aria-expanded="false">
+                Can we add Tithely giving to our existing website?<span
+                  class="plus"
+                  >+</span
+                >
+              </button>
+              <div class="faq-a">
+                <p>
+                  Yes. Tithely can be added to an existing church website using
+                  a giving button or a custom giving link.
+                </p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q" aria-expanded="false">
+                Is online giving secure?<span class="plus">+</span>
+              </button>
+              <div class="faq-a">
+                <p>
+                  Tithely states that financial information is encrypted and
+                  handled using PCI DSS Level 1 compliant standards, with
+                  HTTPS/TLS used for transaction services.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="final newsletter">
+        <div class="wrap newsletter-box">
+          <div class="newsletter-copy">
+            <div class="kicker">Stay inspired</div>
+            <h2>Get free resources and tips delivered to your inbox.</h2>
+            <p>
+              Practical church resources, giving insights, and helpful ideas from
+              Tithely—sent straight to your inbox.
+            </p>
+          </div>
+          <form class="newsletter-form" id="newsletterForm">
+            <label class="sr-only" for="newsletterEmail">Email address</label>
+            <div class="newsletter-input-wrap">
+              <input
+                id="newsletterEmail"
+                name="email"
+                type="email"
+                placeholder="Enter your email address"
+                autocomplete="email"
+                required
+              />
+              <button class="btn dark" type="submit">Subscribe →</button>
+            </div>
+            <p class="newsletter-note">
+              By subscribing, you agree to receive emails from Tithely. You can
+              unsubscribe anytime.
+            </p>
+            <div class="newsletter-success" id="newsletterSuccess" role="status" aria-live="polite">
+              ✓ You’re on the list. Check your inbox soon.
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="wrap footerin">
+        <a class="brand" href="#" style="color: #fff"
+          ><img
+            src="https://cdn.prod.website-files.com/5f6a31379c9e2712518b8d6c/61fbe41d8e639d5277c516b4_3188cfe6d55336414ce10519feee1016_Logomark.svg"
+            alt="Tithely"
+        /></a>
+        <div class="footlinks">
+          <a href="#pricing">Pricing</a><a href="#faq">FAQ</a
+          ><a href="https://get.tithe.ly/">Tithely.com</a>
+        </div>
+        <small>Concept redesign for portfolio demonstration.</small>
+      </div>
+    </footer>
+    <div class="sticky-cta" id="sticky">
+      <span>Ready to make giving simpler?</span
+      ><a class="btn primary" href="https://signup.tithe.ly/">Start free →</a>
+    </div>
+    <script>
+      const $ = (s, c = document) => c.querySelector(s),
+        $$ = (s, c = document) => [...c.querySelectorAll(s)];
+      // Progressive reveal
+      const observer = new IntersectionObserver(
+        (entries) =>
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add("in");
+              observer.unobserve(e.target);
+            }
+          }),
+        { threshold: 0.12 },
+      );
+      $$(".reveal").forEach((el) => observer.observe(el));
+      // Giving-flow interaction
+      const steps = $$(".step"),
+        sub = $("#phoneSub"),
+        f1 = $("#field1"),
+        f2 = $("#field2");
+      const states = [
+        ["Choose an amount to give", "General Fund ▾", "One-time gift ▾"],
+        ["Choose where your gift goes", "Missions Fund ✓", "One-time gift ▾"],
+        ["Keep generosity going", "General Fund ▾", "Every month ✓"],
+      ];
+      function setStep(i) {
+        const phone = $("#phone");
+        phone.classList.remove("success");
+        steps.forEach((s, n) => s.classList.toggle("active", n === i));
+        sub.textContent = states[i][0];
+        f1.textContent = states[i][1];
+        f2.textContent = states[i][2];
+        $(".give").textContent = i === 2
+          ? "Complete donation"
+          : "Continue with " + ($(".amount.active")?.textContent || "$50");
+
+        // Step 3 completes the story automatically so users don't
+        // need to discover or click the phone-side CTA.
+        if (i === 2) {
+          const selectedAmount = $(".amount.active")?.textContent || "$50";
+          $("#successAmount").textContent = selectedAmount + " gift";
+          $("#successDetails").textContent = "General Fund · Monthly";
+          setTimeout(() => {
+            phone.classList.add("success");
+          }, 280);
+        }
+
+        phone.animate(
+          [
+            { transform: "translateY(0)" },
+            { transform: "translateY(-7px)" },
+            { transform: "translateY(0)" },
+          ],
+          { duration: 360, easing: "ease-out" },
+        );
+      }
+      steps.forEach((s, i) => {
+        s.addEventListener("click", () => setStep(i));
+        s.addEventListener("keydown", (e) => {
+          if (e.key === "Enter" || e.key === " ") setStep(i);
+        });
+      });
+      $$(".amount").forEach(
+        (el) =>
+          (el.onclick = () => {
+            $$(".amount").forEach((a) => a.classList.remove("active"));
+            el.classList.add("active");
+            const isFinalStep = steps[2]?.classList.contains("active");
+            $(".give").textContent = isFinalStep
+              ? "Complete donation"
+              : "Continue with " + el.textContent;
+          }),
+      );
+
+      // Complete the walkthrough with a confirmation state
+      $(".give").addEventListener("click", () => {
+        if (!steps[2]?.classList.contains("active")) return;
+        const selectedAmount = $(".amount.active")?.textContent || "$50";
+        $("#successAmount").textContent = selectedAmount + " gift";
+        $("#successDetails").textContent = "General Fund · Monthly";
+        $("#phone").classList.add("success");
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          event: "prototype_giving_success",
+          gift_amount: selectedAmount,
+          gift_frequency: "monthly",
+        });
+      });
+
+      $("#replayDemo").addEventListener("click", () => setStep(0));
+      // Scenario calculator
+      const attendance = $("#attendance"),
+        givers = $("#givers"),
+        gift = $("#gift");
+      function calc() {
+        const a = +attendance.value,
+          g = +givers.value,
+          f = +gift.value;
+        $("#attendanceOut").textContent = a.toLocaleString();
+        $("#giverOut").textContent = g + "%";
+        $("#giftOut").textContent = "$" + f;
+        $("#monthly").textContent =
+          "$" + Math.round(((a * g) / 100) * f).toLocaleString();
+      }
+      [attendance, givers, gift].forEach((x) =>
+        x.addEventListener("input", calc),
+      );
+      calc();
+      // FAQ accordion
+      $$(".faq-q").forEach((q) =>
+        q.addEventListener("click", () => {
+          const item = q.parentElement,
+            open = item.classList.contains("open");
+          $$(".faq-item").forEach((i) => {
+            i.classList.remove("open");
+            $(".faq-q", i).setAttribute("aria-expanded", "false");
+          });
+          if (!open) {
+            item.classList.add("open");
+            q.setAttribute("aria-expanded", "true");
+          }
+        }),
+      );
+      // Sticky conversion CTA after hero
+      const sticky = $("#sticky");
+      addEventListener(
+        "scroll",
+        () =>
+          sticky.classList.toggle(
+            "show",
+            scrollY > 700 &&
+              scrollY < document.body.scrollHeight - innerHeight - 450,
+          ),
+        { passive: true },
+      );
+      // Newsletter signup prototype interaction
+      const newsletterForm = $("#newsletterForm");
+      if (newsletterForm) {
+        newsletterForm.addEventListener("submit", (e) => {
+          e.preventDefault();
+          const email = $("#newsletterEmail");
+          if (!email.checkValidity()) {
+            email.reportValidity();
+            return;
+          }
+          $("#newsletterSuccess").classList.add("show");
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({
+            event: "prototype_newsletter_signup",
+            email_domain: email.value.includes("@") ? email.value.split("@")[1] : "",
+          });
+          email.value = "";
+        });
+      }
+
+      // Lightweight CTA analytics hooks for GTM/VWO prototypes
+      $$("a.btn").forEach((a) =>
+        a.addEventListener("click", () => {
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({
+            event: "prototype_cta_click",
+            cta_text: a.textContent.trim(),
+            cta_href: a.href,
+          });
+        }),
+      );
+    </script>
+  </body>
+</html>
