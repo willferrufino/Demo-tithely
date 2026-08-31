@@ -74,7 +74,7 @@ Rather than asking visitors to imagine what Tithely Giving is like, the prototyp
 
 ### [View Live Demo →](https://willferrufino.github.io/Demo-tithely/tithely-pricing-redesign.html)
 
-**File:** [`tithely-pricing-redesign(1).html`](./tithely-pricing-redesign.html)
+**File:** [`tithely-pricing-redesign.html`](./tithely-pricing-redesign.html)
 
 ## The Opportunity
 
@@ -176,7 +176,7 @@ The intended journey becomes:
 
 ### [View Live Demo →](https://willferrufino.github.io/Demo-tithely/tithely-compare-redesign.html)
 
-**File:** [`tithely-compare-redesign(1).html`](./tithely-compare-redesign.html)
+**File:** [`tithely-compare-redesign.html`](./tithely-compare-redesign.html)
 
 ## The Opportunity
 
@@ -404,7 +404,7 @@ Together, the three concepts demonstrate an approach centered around:
 |---|---|---|
 | **Online Giving** | [View Live →](https://willferrufino.github.io/Demo-tithely/tithely-online-giving.html) | [`HTML`](./tithely-online-giving.html) |
 | **Pricing** | [View Live →](https://willferrufino.github.io/Demo-tithely/tithely-pricing-redesign.html) | [`HTML`](./tithely-pricing-redesign.html) |
-| **Compare Tithely** | [View Live →](https://willferrufino.github.io/Demo-tithely/tithely-compare-redesign(1).html) | [`HTML`](./tithely-compare-redesign.html) |
+| **Compare Tithely** | [View Live →](https://willferrufino.github.io/Demo-tithely/tithely-compare-redesign.html) | [`HTML`](./tithely-compare-redesign.html) |
 
 ---
 
